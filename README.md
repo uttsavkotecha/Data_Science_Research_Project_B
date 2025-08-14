@@ -1,7 +1,7 @@
 # FDA MAUDE RAG Chatbot for Glucose Monitoring Device Safety Analysis
 
 ## 📌 Overview
-This repository implements a Retrieval-Augmented Generation (RAG) pipeline for querying FDA MAUDE adverse event reports related to Continuous Glucose Monitoring (CGM) systems. The system integrates anomaly detection, semantic search, reranking, and a regulatory-style chatbot interface.
+This repository implements a Retrieval-Augmented Generation (RAG) pipeline for querying FDA MAUDE adverse event reports related to Glucose Monitoring systems. The system integrates anomaly detection, semantic search, reranking, and a regulatory-style chatbot interface.
 
 ---
 
@@ -44,22 +44,6 @@ pip install sentence-transformers qdrant-client gradio
 
 ---
 
-## 📊 Workflow Overview
-
-```mermaid
-flowchart LR
-    A[MAUDE Data<br/>MDR • Device • FOI Text] --> B[Merge & Clean<br/>CGM filter, standardise, drop missing FOI]
-    B --> C[Embeddings<br/>MiniLM-L6-v2]
-    C --> D[Anomaly Detection<br/>Autoencoder + flags]
-    D --> E[Qdrant Vector DB<br/>embeddings + metadata]
-    E --> F[Retrieve Candidates<br/>Top-K=25]
-    F --> G[Rerank<br/>cross-encoder + keyword blend]
-    G --> H[Select Top-N=8]
-    H --> I[Prompt Build<br/>regulatory tone]
-    I --> J[LLM<br/>Mistral 7B (Ollama)]
-    J --> K[Gradio UI]
-```
-
 ---
 
 ## 🧪 Example Usage
@@ -82,6 +66,3 @@ Key Reports:
 ```
 
 ---
-
-## 📜 License
-MIT License – feel free to use, modify, and distribute with attribution.
