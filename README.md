@@ -44,25 +44,3 @@ pip install sentence-transformers qdrant-client gradio
 
 ---
 
----
-
-## 🧪 Example Usage
-
-**Query:**
-```
-Events where Death Occurred
-```
-
-**Output:**
-```
-Summary:
-Multiple incidents involving CGM devices resulted in patient death...
-
-Key Reports:
-1. Device: Dexcom G6 | Event Type: Death | Date: 2022-09-15
-   Description: Reported sensor error leading to undetected hypoglycemia...
-2. Device: FreeStyle Libre 2 | Event Type: Death | Date: 2021-03-04
-   Description: Malfunction prevented alert triggering...
-```
-
----
